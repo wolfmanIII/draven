@@ -38,6 +38,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: ApprovalDecision::class)]
     private Collection $approvalDecisions;
 
+    /**
+     * @var Collection<int, ApiToken>
+     */
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: ApiToken::class, cascade: ['remove'])]
+    private Collection $apiTokens;
+
     public function __construct()
     {
         $this->id = Uuid::v7();
@@ -46,6 +52,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         $this->updatedAt = $now;
         $this->deployJobsRequested = new ArrayCollection();
         $this->approvalDecisions = new ArrayCollection();
+        $this->apiTokens = new ArrayCollection();
     }
 
     public function getId(): ?Uuid
@@ -182,5 +189,21 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         }
 
         return $this;
+    }
+
+    public function getGravatarUrl(int $size = 32): string
+    {
+        $email = strtolower(trim((string) $this->email));
+        $hash = md5($email);
+
+        return sprintf('https://www.gravatar.com/avatar/%s?s=%d&d=identicon', $hash, $size);
+    }
+
+    /**
+     * @return Collection<int, ApiToken>
+     */
+    public function getApiTokens(): Collection
+    {
+        return $this->apiTokens;
     }
 }
