@@ -2,7 +2,7 @@
   "name": "draven",
   "version": "1.0.0",
   "description": "DRAVEN Deploy Control Plane",
-  "license": "ISC",
+  "license": "MIT",
   "author": "",
   "type": "commonjs",
   "main": "index.js",
