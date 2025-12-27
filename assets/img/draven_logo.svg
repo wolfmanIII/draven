@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="136 136 752 752" preserveAspectRatio="xMidYMid meet">
+  <ns0:defs>
+    <ns0:clipPath id="clipOuter">
+      <ns0:path d="M 823.77 646.97 A 78.00 78.00 0 0 1 784.77 714.52 L 551.00 849.48 A 78.00 78.00 0 0 1 473.00 849.48 L 239.23 714.52 A 78.00 78.00 0 0 1 200.23 646.97 L 200.23 377.03 A 78.00 78.00 0 0 1 239.23 309.48 L 473.00 174.52 A 78.00 78.00 0 0 1 551.00 174.52 L 784.77 309.48 A 78.00 78.00 0 0 1 823.77 377.03 Z" />
+    </ns0:clipPath>
+    <ns0:mask id="ringMask">
+      <ns0:rect x="0" y="0" width="1024" height="1024" fill="black" />
+      <ns0:path d="M 823.77 646.97 A 78.00 78.00 0 0 1 784.77 714.52 L 551.00 849.48 A 78.00 78.00 0 0 1 473.00 849.48 L 239.23 714.52 A 78.00 78.00 0 0 1 200.23 646.97 L 200.23 377.03 A 78.00 78.00 0 0 1 239.23 309.48 L 473.00 174.52 A 78.00 78.00 0 0 1 551.00 174.52 L 784.77 309.48 A 78.00 78.00 0 0 1 823.77 377.03 Z" fill="white" />
+      <ns0:path d="M 663.55 575.25 A 42.00 42.00 0 0 1 642.55 611.62 L 533.00 674.88 A 42.00 42.00 0 0 1 491.00 674.88 L 381.45 611.62 A 42.00 42.00 0 0 1 360.45 575.25 L 360.45 448.75 A 42.00 42.00 0 0 1 381.45 412.38 L 491.00 349.12 A 42.00 42.00 0 0 1 533.00 349.12 L 642.55 412.38 A 42.00 42.00 0 0 1 663.55 448.75 Z" fill="black" />
+    </ns0:mask>
+    <ns0:radialGradient id="panel" cx="50%" cy="55%" r="80%">
+      <ns0:stop offset="0%" stop-color="#0b1a2a" stop-opacity="1" />
+      <ns0:stop offset="60%" stop-color="#071420" stop-opacity="1" />
+      <ns0:stop offset="100%" stop-color="#040b12" stop-opacity="1" />
+    </ns0:radialGradient>
+    <ns0:radialGradient id="heatA" cx="50%" cy="50%" r="74%">
+      <ns0:stop offset="0%" stop-color="#ffffff" stop-opacity="1" />
+      <ns0:stop offset="30%" stop-color="#bff6ff" stop-opacity="1" />
+      <ns0:stop offset="70%" stop-color="#3fe6ff" stop-opacity="1" />
+      <ns0:stop offset="100%" stop-color="#09142a" stop-opacity="1" />
+    </ns0:radialGradient>
+    <ns0:radialGradient id="heatB" cx="46%" cy="42%" r="90%">
+      <ns0:stop offset="0%" stop-color="#ffffff" stop-opacity="1" />
+      <ns0:stop offset="55%" stop-color="#8b7bff" stop-opacity="1" />
+      <ns0:stop offset="100%" stop-color="#061120" stop-opacity="1" />
+    </ns0:radialGradient>
+    <ns0:filter id="grain" x="-15%" y="-15%" width="130%" height="130%">
+      <ns0:feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="2" stitchTiles="stitch" result="n" />
+      <ns0:feColorMatrix in="n" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.06 0" result="a" />
+      <ns0:feBlend in="SourceGraphic" in2="a" mode="overlay" />
+    </ns0:filter>
+    <ns0:filter id="heatGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <ns0:feDropShadow dx="0" dy="0" stdDeviation="2.4" flood-color="#cfffff" flood-opacity="0.30" />
+    </ns0:filter>
+    <ns0:radialGradient id="innerFill" cx="50%" cy="50%" r="78%">
+      <ns0:stop offset="0%" stop-color="#a9d6ff" stop-opacity="0.20" />
+      <ns0:stop offset="55%" stop-color="#051220" stop-opacity="0.86" />
+      <ns0:stop offset="100%" stop-color="#02080d" stop-opacity="0.95" />
+    </ns0:radialGradient>
+    <ns0:radialGradient id="coreSphere" cx="34%" cy="28%" r="78%">
+      <ns0:stop offset="0%" stop-color="#b8f4ff" stop-opacity="1" />
+      <ns0:stop offset="26%" stop-color="#85ecff" stop-opacity="1" />
+      <ns0:stop offset="58%" stop-color="#62e6ff" stop-opacity="1" />
+      <ns0:stop offset="85%" stop-color="#47a6b8" stop-opacity="1" />
+      <ns0:stop offset="100%" stop-color="#367e8c" stop-opacity="1" />
+    </ns0:radialGradient>
+  </ns0:defs>
+  <ns0:rect x="0" y="0" width="1024" height="1024" fill="url(#panel)" clip-path="url(#clipOuter)" opacity="0.96" />
+  <ns0:g mask="url(#ringMask)" filter="url(#grain)">
+    <ns0:polygon points="512.00,152.00 823.77,332.00 512.00,337.00" fill="url(#heatA)" opacity="0.82" stroke="none" />
+    <ns0:polygon points="512.00,337.00 823.77,332.00 663.55,424.50" fill="url(#heatB)" opacity="0.78" stroke="none" />
+    <ns0:polygon points="823.77,332.00 823.77,692.00 663.55,424.50" fill="url(#heatA)" opacity="0.78" stroke="none" />
+    <ns0:polygon points="663.55,424.50 823.77,692.00 663.55,599.50" fill="url(#heatB)" opacity="0.82" stroke="none" />
+    <ns0:polygon points="823.77,692.00 512.00,872.00 663.55,599.50" fill="url(#heatA)" opacity="0.82" stroke="none" />
+    <ns0:polygon points="663.55,599.50 512.00,872.00 512.00,687.00" fill="url(#heatB)" opacity="0.78" stroke="none" />
+    <ns0:polygon points="512.00,872.00 200.23,692.00 512.00,687.00" fill="url(#heatA)" opacity="0.78" stroke="none" />
+    <ns0:polygon points="512.00,687.00 200.23,692.00 360.45,599.50" fill="url(#heatB)" opacity="0.82" stroke="none" />
+    <ns0:polygon points="200.23,692.00 200.23,332.00 360.45,599.50" fill="url(#heatA)" opacity="0.82" stroke="none" />
+    <ns0:polygon points="360.45,599.50 200.23,332.00 360.45,424.50" fill="url(#heatB)" opacity="0.78" stroke="none" />
+    <ns0:polygon points="200.23,332.00 512.00,152.00 360.45,424.50" fill="url(#heatA)" opacity="0.78" stroke="none" />
+    <ns0:polygon points="360.45,424.50 512.00,152.00 512.00,337.00" fill="url(#heatB)" opacity="0.82" stroke="none" />
+  </ns0:g>
+  <ns0:g mask="url(#ringMask)" stroke="url(#heatB)" stroke-width="7" stroke-linecap="round" opacity="0.34" filter="url(#heatGlow)">
+    <ns0:line x1="823.77" y1="332.00" x2="823.77" y2="692.00" />
+    <ns0:line x1="663.55" y1="424.50" x2="663.55" y2="599.50" />
+    <ns0:line x1="360.45" y1="424.50" x2="512.00" y2="337.00" />
+    <ns0:line x1="200.23" y1="332.00" x2="200.23" y2="692.00" />
+    <ns0:line x1="512.00" y1="152.00" x2="823.77" y2="332.00" />
+    <ns0:line x1="663.55" y1="424.50" x2="823.77" y2="332.00" />
+    <ns0:line x1="200.23" y1="692.00" x2="512.00" y2="687.00" />
+    <ns0:line x1="663.55" y1="424.50" x2="823.77" y2="692.00" />
+    <ns0:line x1="512.00" y1="337.00" x2="823.77" y2="332.00" />
+    <ns0:line x1="200.23" y1="332.00" x2="512.00" y2="152.00" />
+    <ns0:line x1="663.55" y1="599.50" x2="823.77" y2="692.00" />
+    <ns0:line x1="360.45" y1="599.50" x2="512.00" y2="687.00" />
+    <ns0:line x1="512.00" y1="872.00" x2="663.55" y2="599.50" />
+    <ns0:line x1="200.23" y1="332.00" x2="360.45" y2="599.50" />
+    <ns0:line x1="512.00" y1="687.00" x2="663.55" y2="599.50" />
+    <ns0:line x1="512.00" y1="337.00" x2="663.55" y2="424.50" />
+    <ns0:line x1="360.45" y1="424.50" x2="512.00" y2="152.00" />
+    <ns0:line x1="512.00" y1="152.00" x2="512.00" y2="337.00" />
+    <ns0:line x1="512.00" y1="872.00" x2="823.77" y2="692.00" />
+    <ns0:line x1="200.23" y1="692.00" x2="512.00" y2="872.00" />
+    <ns0:line x1="512.00" y1="687.00" x2="512.00" y2="872.00" />
+    <ns0:line x1="360.45" y1="424.50" x2="360.45" y2="599.50" />
+    <ns0:line x1="200.23" y1="692.00" x2="360.45" y2="599.50" />
+    <ns0:line x1="200.23" y1="332.00" x2="360.45" y2="424.50" />
+  </ns0:g>
+  <ns0:path d="M 663.55 575.25 A 42.00 42.00 0 0 1 642.55 611.62 L 533.00 674.88 A 42.00 42.00 0 0 1 491.00 674.88 L 381.45 611.62 A 42.00 42.00 0 0 1 360.45 575.25 L 360.45 448.75 A 42.00 42.00 0 0 1 381.45 412.38 L 491.00 349.12 A 42.00 42.00 0 0 1 533.00 349.12 L 642.55 412.38 A 42.00 42.00 0 0 1 663.55 448.75 Z" fill="url(#innerFill)" opacity="1" stroke="#2563EB" stroke-width="12" stroke-linejoin="round" stroke-linecap="round" />
+  <ns0:path d="M 663.55 575.25 A 42.00 42.00 0 0 1 642.55 611.62 L 533.00 674.88 A 42.00 42.00 0 0 1 491.00 674.88 L 381.45 611.62 A 42.00 42.00 0 0 1 360.45 575.25 L 360.45 448.75 A 42.00 42.00 0 0 1 381.45 412.38 L 491.00 349.12 A 42.00 42.00 0 0 1 533.00 349.12 L 642.55 412.38 A 42.00 42.00 0 0 1 663.55 448.75 Z" fill="none" stroke="#9db9f6" stroke-width="6.6000000000000005" opacity="0.2" stroke-linejoin="round" stroke-linecap="round" />
+  <ns0:circle cx="512" cy="512" r="74.80" fill="url(#coreSphere)" opacity="1" />
+  <ns0:circle cx="512" cy="512" r="90" fill="none" stroke="#62e6ff" stroke-width="16" opacity="1" />
+  <ns0:path d="M 823.77 646.97 A 78.00 78.00 0 0 1 784.77 714.52 L 551.00 849.48 A 78.00 78.00 0 0 1 473.00 849.48 L 239.23 714.52 A 78.00 78.00 0 0 1 200.23 646.97 L 200.23 377.03 A 78.00 78.00 0 0 1 239.23 309.48 L 473.00 174.52 A 78.00 78.00 0 0 1 551.00 174.52 L 784.77 309.48 A 78.00 78.00 0 0 1 823.77 377.03 Z" fill="none" stroke="#2563EB" stroke-width="40" stroke-linecap="round" stroke-linejoin="round" />
+  <ns0:path d="M 823.77 646.97 A 78.00 78.00 0 0 1 784.77 714.52 L 551.00 849.48 A 78.00 78.00 0 0 1 473.00 849.48 L 239.23 714.52 A 78.00 78.00 0 0 1 200.23 646.97 L 200.23 377.03 A 78.00 78.00 0 0 1 239.23 309.48 L 473.00 174.52 A 78.00 78.00 0 0 1 551.00 174.52 L 784.77 309.48 A 78.00 78.00 0 0 1 823.77 377.03 Z" fill="none" stroke="#9db9f6" stroke-width="22.0" stroke-linecap="round" stroke-linejoin="round" opacity="0.28" />
+</ns0:svg>

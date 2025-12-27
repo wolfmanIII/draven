@@ -1,0 +1,27 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Listen for Xdebug",
+      "type": "php",
+      "request": "launch",
+      "port": 9003
+    },
+    {
+      "name": "Symfony CLI (console)",
+      "type": "php",
+      "request": "launch",
+      "program": "${workspaceFolder}/bin/console",
+      "cwd": "${workspaceFolder}",
+      "args": [
+        "app:assets:generate-favicon",
+        "--dry-run"
+      ],
+      "port": 9003,
+      "env": {
+        "APP_ENV": "dev",
+        "XDEBUG_MODE": "debug"
+      }
+    }
+  ]
+}
