@@ -4,6 +4,8 @@ DRAVEN (*Deployment Routing & Approval Verification ENgine*) è un **Deploy Cont
 
 Tagline: **“Controlled releases across stage, demo and production.”**
 
+Licenza: **MIT**.
+
 ---
 
 ## Obiettivi
