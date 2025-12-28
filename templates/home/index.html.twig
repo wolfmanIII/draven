@@ -72,14 +72,12 @@
             <div class="grid gap-6 md:grid-cols-2">
                 <div class="card bg-base-100 border border-base-300">
                     <div class="card-body space-y-3">
-                        <h3 class="card-title text-base">Già implementato (v1)</h3>
+                        <h3 class="card-title text-base">Stato attuale</h3>
                         <ul class="list-disc list-inside text-sm opacity-80 space-y-1">
-                            <li>Gestione Projects / Environments / Policies.</li>
-                            <li>Job deploy/rollback/dry-run con stato, ref e link esterno.</li>
-                            <li>Lock esclusivo per ambiente e approval gate demo/prod.</li>
-                            <li>Webhook con firma per stati e log esterni.</li>
-                            <li>Template pipeline compatibile con Bitbucket/GitHub/GitLab.</li>
-                            <li>UI con elenco run, integrazioni e dettaglio policy.</li>
+                            <li>Modello dati completo (Projects/Environments/Policies/Integrations/Jobs/Approvals/Lock/Log/ApiToken) con migrazione pronta.</li>
+                            <li>Autenticazione form + Bearer token (ApiTokenAuthenticator) e layout base DRAVEN.</li>
+                            <li>Homepage e login stilizzati, importmap allineato, loghi e icone aggiornati.</li>
+                            <li>Deployer aggiunto in dev per uso nei runner, non ancora integrato nei flussi.</li>
                         </ul>
                     </div>
                 </div>
@@ -88,11 +86,12 @@
                     <div class="card-body space-y-3">
                         <h3 class="card-title text-base">Prossimi step</h3>
                         <ul class="list-disc list-inside text-sm opacity-80 space-y-1">
-                            <li>Log centralizzati con streaming webhook (v2).</li>
-                            <li>Reportistica deploy (failure rate, durata media).</li>
-                            <li>Notifiche Slack/Teams/email e finestre orarie avanzate.</li>
-                            <li>UI avanzata per approvazioni e audit.</li>
-                            <li>Scheduler/schedulazioni deploy e rollback rapidi.</li>
+                            <li>CRUD/UI/API per Projects, Environments, Policies e Integrations (provider mapping).</li>
+                            <li>Flusso creazione DeployJob con validazione policy, lock ambiente e approval gate.</li>
+                            <li>Endpoint API per run e webhook provider firmato; adapter Bitbucket/GitHub/GitLab (stubs o primo provider).</li>
+                            <li>UI Runs/Approvals con stato, ref, link esterno e azioni consentite da ruoli.</li>
+                            <li>Seed policy baseline (stage/demo/prod) e comandi per utenti/token.</li>
+                            <li>Test funzionali su API run/approval/webhook e blocco concorrente per ambiente.</li>
                         </ul>
                     </div>
                 </div>
