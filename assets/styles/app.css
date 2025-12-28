@@ -51,11 +51,11 @@
     background-color: hsl(var(--b1));
 }
 
-.elara-logo-spin {
-  animation: elara-rotate 2s linear infinite;
+.draven-logo-spin {
+  animation: draven-rotate 2s linear infinite;
   display: inline-block;
 }
-@keyframes elara-rotate {
+@keyframes draven-rotate {
   from { transform: rotate(0deg); }
   to   { transform: rotate(360deg); }
 }
