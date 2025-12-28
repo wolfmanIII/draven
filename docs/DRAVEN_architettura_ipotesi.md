@@ -116,7 +116,7 @@ La migrazione di un progetto tra provider avviene modificando l’integrazione s
 - pipeline che invia log a Symfony (webhook) per archiviazione interna
 
 3) **Impostare l’abstraction layer provider**
-- una tabella/entità `DeployProvider` con adapter per trigger e webhook receiver
+- utilizzare l’entità `RepoIntegration` con adapter per trigger e webhook receiver
 
 4) **Proof of concept su 1 progetto**
 - 1 progetto, 2 ambienti (demo/prod), 1 provider (Bitbucket)
