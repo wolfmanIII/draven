@@ -11,7 +11,7 @@ abstract class BaseController extends AbstractController
     /**
      * Render con `controller_name` già iniettato nel contesto.
      */
-    protected function renderWithController(string $template, array $parameters = [], Response $response = null): Response
+    protected function renderWithController(string $template, array $parameters = [], ?Response $response = null): Response
     {
         $parameters['controller_name'] = static::CONTROLLER_NAME ?? null;
 
