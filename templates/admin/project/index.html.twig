@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Progetti{% endblock %}
+
+{% block pageContent %}
+<div class="p-6 space-y-4">
+    <div class="flex items-center justify-between">
+        <h1 class="text-2xl font-bold">Projects</h1>
+        <a class="btn btn-primary" href="{{ path('admin_project_new') }}">Nuovo progetto</a>
+    </div>
+
+    <div class="overflow-x-auto">
+        <table class="table table-zebra w-full">
+            <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Slug</th>
+                <th>Attivo</th>
+                <th>Creato</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for project in projects %}
+                <tr>
+                    <td>{{ project.name }}</td>
+                    <td><code>{{ project.slug }}</code></td>
+                    <td>{{ project.isActive ? 'Sì' : 'No' }}</td>
+                    <td>{{ project.createdAt|date('Y-m-d H:i') }}</td>
+                    <td class="text-right space-x-2">
+                        <a class="btn btn-xs" href="{{ path('admin_project_edit', {id: project.id}) }}">Modifica</a>
+                        <form method="post" action="{{ path('admin_project_delete', {id: project.id}) }}" class="inline"
+                              onsubmit="return confirm('Confermi la cancellazione?');">
+                            <input type="hidden" name="_token" value="{{ csrf_token('delete_project_' ~ project.id) }}">
+                            <button class="btn btn-xs btn-error" type="submit">Elimina</button>
+                        </form>
+                    </td>
+                </tr>
+            {% else %}
+                <tr><td colspan="5" class="text-center">Nessun progetto</td></tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

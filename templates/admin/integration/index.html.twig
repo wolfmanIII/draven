@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Integrazioni SCM{% endblock %}
+
+{% block pageContent %}
+<div class="p-6 space-y-4">
+    <div class="flex items-center justify-between">
+        <h1 class="text-2xl font-bold">Integrazioni SCM</h1>
+        <a class="btn btn-primary" href="{{ path('admin_integration_new') }}">Nuova integrazione</a>
+    </div>
+
+    <div class="overflow-x-auto">
+        <table class="table table-zebra w-full">
+            <thead>
+            <tr>
+                <th>Project</th>
+                <th>Provider</th>
+                <th>Repo</th>
+                <th>Branch default</th>
+                <th>Attivo</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for integration in integrations %}
+                <tr>
+                    <td>{{ integration.project.name }}</td>
+                    <td>{{ integration.provider }}</td>
+                    <td><code>{{ integration.repoFullName }}</code></td>
+                    <td><code>{{ integration.defaultBranch }}</code></td>
+                    <td>{{ integration.isActive ? 'Sì' : 'No' }}</td>
+                    <td class="text-right space-x-2">
+                        <a class="btn btn-xs" href="{{ path('admin_integration_edit', {id: integration.id}) }}">Modifica</a>
+                        <form method="post" action="{{ path('admin_integration_delete', {id: integration.id}) }}" class="inline"
+                              onsubmit="return confirm('Confermi la cancellazione?');">
+                            <input type="hidden" name="_token" value="{{ csrf_token('delete_integration_' ~ integration.id) }}">
+                            <button class="btn btn-xs btn-error" type="submit">Elimina</button>
+                        </form>
+                    </td>
+                </tr>
+            {% else %}
+                <tr><td colspan="6" class="text-center">Nessuna integrazione</td></tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
