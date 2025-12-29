@@ -13,6 +13,8 @@ use Symfony\Component\Routing\Attribute\Route;
 #[Route('/admin/policies', name: 'admin_policy_')]
 class PolicyController extends BaseController
 {
+    public const CONTROLLER_NAME = 'PolicyController';
+
     #[Route('', name: 'index', methods: ['GET'])]
     public function index(EntityManagerInterface $em): Response
     {

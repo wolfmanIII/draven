@@ -13,6 +13,8 @@ use Symfony\Component\Routing\Attribute\Route;
 #[Route('/admin/integrations', name: 'admin_integration_')]
 class RepoIntegrationController extends BaseController
 {
+    public const CONTROLLER_NAME = 'RepoIntegrationController';
+
     #[Route('', name: 'index', methods: ['GET'])]
     public function index(EntityManagerInterface $em): Response
     {

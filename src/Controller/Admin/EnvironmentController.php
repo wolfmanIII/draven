@@ -13,6 +13,8 @@ use Symfony\Component\Routing\Attribute\Route;
 #[Route('/admin/environments', name: 'admin_environment_')]
 class EnvironmentController extends BaseController
 {
+    public const CONTROLLER_NAME = 'EnvironmentController';
+
     #[Route('', name: 'index', methods: ['GET'])]
     public function index(EntityManagerInterface $em): Response
     {

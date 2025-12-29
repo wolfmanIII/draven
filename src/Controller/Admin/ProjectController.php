@@ -13,6 +13,8 @@ use Symfony\Component\Routing\Attribute\Route;
 #[Route('/admin/projects', name: 'admin_project_')]
 class ProjectController extends BaseController
 {
+    public const CONTROLLER_NAME = 'ProjectController';
+
     #[Route('', name: 'index', methods: ['GET'])]
     public function index(EntityManagerInterface $em): Response
     {
