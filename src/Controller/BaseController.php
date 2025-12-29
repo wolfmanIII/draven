@@ -8,6 +8,8 @@ use Symfony\Component\HttpFoundation\Response;
 
 abstract class BaseController extends AbstractController
 {
+    public const CONTROLLER_NAME = 'BaseController';
+
     /**
      * Render con `controller_name` già iniettato nel contesto.
      */
