@@ -20,7 +20,7 @@ class PolicyController extends BaseController
     {
         $policies = $em->getRepository(Policy::class)->findBy([], ['createdAt' => 'DESC']);
 
-        return $this->render('admin/policy/index.html.twig', [
+        return $this->renderWithController('admin/policy/index.html.twig', [
             'policies' => $policies,
         ]);
     }

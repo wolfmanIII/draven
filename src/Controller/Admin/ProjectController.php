@@ -20,7 +20,7 @@ class ProjectController extends BaseController
     {
         $projects = $em->getRepository(Project::class)->findBy([], ['createdAt' => 'DESC']);
 
-        return $this->render('admin/project/index.html.twig', [
+        return $this->renderWithController('admin/project/index.html.twig', [
             'projects' => $projects,
         ]);
     }

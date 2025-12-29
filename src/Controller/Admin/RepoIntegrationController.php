@@ -20,7 +20,7 @@ class RepoIntegrationController extends BaseController
     {
         $integrations = $em->getRepository(RepoIntegration::class)->findBy([], ['createdAt' => 'DESC']);
 
-        return $this->render('admin/integration/index.html.twig', [
+        return $this->renderWithController('admin/integration/index.html.twig', [
             'integrations' => $integrations,
         ]);
     }

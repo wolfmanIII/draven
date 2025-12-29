@@ -12,8 +12,6 @@ class HomeController extends BaseController
     #[Route(path: '/', name: 'app_home', methods: ['GET'])]
     public function __invoke(): Response
     {
-        return $this->render('home/index.html.twig', [
-            'controller_name' => self::CONTROLLER_NAME,
-        ]);
+        return $this->renderWithController('home/index.html.twig');
     }
 }

@@ -20,7 +20,7 @@ class EnvironmentController extends BaseController
     {
         $environments = $em->getRepository(Environment::class)->findBy([], ['createdAt' => 'DESC']);
 
-        return $this->render('admin/environment/index.html.twig', [
+        return $this->renderWithController('admin/environment/index.html.twig', [
             'environments' => $environments,
         ]);
     }
