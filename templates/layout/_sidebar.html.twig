@@ -13,25 +13,29 @@
 
             <li class="menu-title px-4 text-xs uppercase tracking-widest opacity-60">Admin</li>
             <li>
-                <a href="{{ path('admin_project_index') }}">
+                <a href="{{ path('admin_project_index') }}"
+                   class="{% if controller_name == constant('App\\Controller\\Admin\\ProjectController::CONTROLLER_NAME') %}menu-active{% endif %}">
                     {{ include('icons/architecture.html.twig') }}
                     <span>Projects</span>
                 </a>
             </li>
             <li>
-                <a href="{{ path('admin_environment_index') }}">
+                <a href="{{ path('admin_environment_index') }}"
+                   class="{% if controller_name == constant('App\\Controller\\Admin\\EnvironmentController::CONTROLLER_NAME') %}menu-active{% endif %}">
                     {{ include('icons/radar.html.twig') }}
                     <span>Environments</span>
                 </a>
             </li>
             <li>
-                <a href="{{ path('admin_policy_index') }}">
+                <a href="{{ path('admin_policy_index') }}"
+                   class="{% if controller_name == constant('App\\Controller\\Admin\\PolicyController::CONTROLLER_NAME') %}menu-active{% endif %}">
                     {{ include('icons/handbook.html.twig') }}
                     <span>Policies</span>
                 </a>
             </li>
             <li>
-                <a href="{{ path('admin_integration_index') }}">
+                <a href="{{ path('admin_integration_index') }}"
+                   class="{% if controller_name == constant('App\\Controller\\Admin\\RepoIntegrationController::CONTROLLER_NAME') %}menu-active{% endif %}">
                     {{ include('icons/pipeline.html.twig') }}
                     <span>Integrazioni</span>
                 </a>
