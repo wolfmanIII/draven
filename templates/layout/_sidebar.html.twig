@@ -11,6 +11,32 @@
                 </a>
             </li>
 
+            <li class="menu-title px-4 text-xs uppercase tracking-widest opacity-60">Admin</li>
+            <li>
+                <a href="{{ path('admin_project_index') }}">
+                    {{ include('icons/architecture.html.twig') }}
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ path('admin_environment_index') }}">
+                    {{ include('icons/radar.html.twig') }}
+                    <span>Environments</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ path('admin_policy_index') }}">
+                    {{ include('icons/handbook.html.twig') }}
+                    <span>Policies</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ path('admin_integration_index') }}">
+                    {{ include('icons/pipeline.html.twig') }}
+                    <span>Integrazioni</span>
+                </a>
+            </li>
+
         </ul>
     </div>
 </div>
