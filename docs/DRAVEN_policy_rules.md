@@ -15,6 +15,7 @@ Guida di riferimento per la configurazione del campo `rules_json` nelle policy a
 
 - **`allowed_tags`** (array di string, opzionale): analogo a `allowed_branches`, applicato ai tag. Stringhe letterali o regex.
   - Esempio semver: `"v\\d+\\.\\d+\\.\\d+"` (corrisponde a `vX.Y.Z`).
+  - Nota: i tag semver seguono `vMAJOR.MINOR.PATCH`, es. `v1.2.3`; la regex usa backslash doppi in JSON.
   - Esempio formato data: `"\\d{4}\\.\\d{2}\\.\\d{2}"` (corrisponde a `YYYY.MM.DD`).
 
 - **`require_approval`** (bool): abilita il gate di approvazione (`waiting_approval`).
