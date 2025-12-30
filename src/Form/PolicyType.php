@@ -23,11 +23,15 @@ class PolicyType extends AbstractType
             ->add('name', TextType::class, [
                 'label' => 'Nome',
                 'constraints' => [new Assert\NotBlank()],
+                'attr' => ['class' => 'input m-1 w-full'],
             ])
             ->add('description', TextareaType::class, [
                 'label' => 'Descrizione',
                 'required' => false,
-                'attr' => ['rows' => 3],
+                'attr' => [
+                    'rows' => 3,
+                    'class' => 'textarea m-1 w-full',
+                ],
             ])
             ->add('rulesJson', TextareaType::class, [
                 'label' => 'rules_json (JSON)',
@@ -35,6 +39,7 @@ class PolicyType extends AbstractType
                 'attr' => [
                     'rows' => 12,
                     'placeholder' => 'Inserisci un oggetto JSON con le regole (vedi docs/DRAVEN_policy_rules.md)',
+                    'class' => 'm-1 w-full',
                 ],
             ]);
 

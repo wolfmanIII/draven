@@ -29,6 +29,7 @@ class RepoIntegrationType extends AbstractType
                 'choice_label' => 'name',
                 'label' => 'Project',
                 'constraints' => [new Assert\NotBlank()],
+                'attr' => ['class' => 'select m-1 w-full'],
             ])
             ->add('provider', ChoiceType::class, [
                 'label' => 'Provider',
@@ -38,14 +39,17 @@ class RepoIntegrationType extends AbstractType
                     'GitLab' => 'gitlab',
                 ],
                 'constraints' => [new Assert\NotBlank()],
+                'attr' => ['class' => 'select m-1 w-full'],
             ])
             ->add('repoFullName', TextType::class, [
                 'label' => 'Repo (org/repo o workspace/repo)',
                 'constraints' => [new Assert\NotBlank()],
+                'attr' => ['class' => 'input m-1 w-full'],
             ])
             ->add('defaultBranch', TextType::class, [
                 'label' => 'Branch di default',
                 'constraints' => [new Assert\NotBlank()],
+                'attr' => ['class' => 'input m-1 w-full'],
             ])
             ->add('pipelineSelector', TextareaType::class, [
                 'label' => 'Pipeline selector (JSON mapping env → workflow)',
@@ -53,19 +57,23 @@ class RepoIntegrationType extends AbstractType
                 'attr' => [
                     'rows' => 6,
                     'placeholder' => '{"stage": "pipeline-stage", "demo": "pipeline-demo", "prod": "pipeline-prod"}',
+                    'class' => 'input m-1 w-full',
                 ],
             ])
             ->add('webhookSecret', TextType::class, [
                 'label' => 'Webhook secret',
                 'required' => false,
+                'attr' => ['class' => 'input m-1 w-full'],
             ])
             ->add('credentialRef', TextType::class, [
                 'label' => 'Credential ref',
                 'required' => false,
+                'attr' => ['class' => 'input m-1 w-full'],
             ])
             ->add('isActive', CheckboxType::class, [
                 'label' => 'Attivo',
                 'required' => false,
+                'attr' => ['class' => 'm-1'],
             ]);
 
         $builder->get('pipelineSelector')->addModelTransformer($this->jsonTransformer);

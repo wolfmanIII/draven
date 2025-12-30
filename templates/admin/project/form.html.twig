@@ -1,12 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ project.id ? 'Modifica progetto' : 'Nuovo progetto' }}{% endblock %}
+{% block title %}{{ project.id ? 'Progetto' : 'Nuovo progetto' }}{% endblock %}
 
 {% block pageContent %}
 <div class="p-6 space-y-4 max-w-3xl mx-auto">
     <div class="flex items-center justify-between gap-4">
         <h1 class="text-2xl font-bold">
-            {{ project.id ? 'Modifica progetto' : 'Nuovo progetto' }}
+            {{ project.id ? 'Progetto' : 'Nuovo progetto' }}
         </h1>
         <a class="btn" href="{{ path('admin_project_index') }}">Torna alla lista</a>
     </div>
@@ -14,22 +14,41 @@
     <div class="card bg-base-100 shadow-xl border border-base-300">
         <div class="card-body space-y-4">
             {{ form_start(form) }}
-                <div class="form-control">
-                    {{ form_row(form.name) }}
-                </div>
-                <div class="form-control">
-                    {{ form_row(form.slug) }}
-                </div>
-                <div class="form-control">
-                    {{ form_row(form.description) }}
-                </div>
-                <div class="form-control">
-                    {{ form_row(form.isActive) }}
-                </div>
-                <div class="pt-2 space-x-2">
-                    <button class="btn btn-primary" type="submit">Salva</button>
-                    <a class="btn" href="{{ path('admin_project_index') }}">Annulla</a>
-                </div>
+                <fieldset class="fieldset grid grid-cols-2 bg-base-200 border-base-300 gap-4 p-4 border rounded w-full">
+                    <legend class="fieldset-legend">Project</legend>
+
+                    <div>
+                        <label class="label">Nome</label>
+                        {{ form_widget(form.name) }}
+                        {{ form_errors(form.name) }}
+                    </div>
+
+                    <div>
+                        <label class="label">Slug</label>
+                        {{ form_widget(form.slug) }}
+                        {{ form_errors(form.slug) }}
+                    </div>
+
+                    <div class="col-span-2">
+                        <label class="label">Descrizione</label>
+                        {{ form_widget(form.description) }}
+                        {{ form_errors(form.description) }}
+                    </div>
+
+                    <div>
+                        <label class="label">Attivo</label>
+                        <div class="flex items-center gap-2">
+                            {{ form_widget(form.isActive) }}
+                        </div>
+                        {{ form_errors(form.isActive) }}
+                    </div>
+
+                    <div class="col-span-2 flex gap-2 pt-2">
+                        <button class="btn btn-primary" type="submit">Salva</button>
+                        <a class="btn" href="{{ path('admin_project_index') }}">Annulla</a>
+                    </div>
+                </fieldset>
+                {{ form_rest(form) }}
             {{ form_end(form) }}
         </div>
     </div>

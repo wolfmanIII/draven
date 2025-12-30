@@ -23,6 +23,7 @@ class EnvironmentType extends AbstractType
                 'choice_label' => 'name',
                 'label' => 'Project',
                 'constraints' => [new Assert\NotBlank()],
+                'attr' => ['class' => 'input m-1 w-full'],
             ])
             ->add('name', ChoiceType::class, [
                 'label' => 'Environment',
@@ -32,16 +33,19 @@ class EnvironmentType extends AbstractType
                     'Production' => 'prod',
                 ],
                 'constraints' => [new Assert\NotBlank()],
+                'attr' => ['class' => 'select m-1 w-full'],
             ])
             ->add('policy', EntityType::class, [
                 'class' => Policy::class,
                 'choice_label' => 'name',
                 'label' => 'Policy',
                 'constraints' => [new Assert\NotBlank()],
+                'attr' => ['class' => 'select m-1 w-full'],
             ])
             ->add('isEnabled', CheckboxType::class, [
                 'label' => 'Abilitato',
                 'required' => false,
+                'attr' => ['class' => 'm-1'],
             ])
             ->add('lockStrategy', ChoiceType::class, [
                 'label' => 'Lock strategy',
@@ -49,6 +53,7 @@ class EnvironmentType extends AbstractType
                     'Exclusive' => 'exclusive',
                     'None' => 'none',
                 ],
+                'attr' => ['class' => 'select m-1 w-full'],
             ]);
     }
 

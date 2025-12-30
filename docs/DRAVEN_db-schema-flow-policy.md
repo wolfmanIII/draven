@@ -1,4 +1,4 @@
-# DRAVEN Control Plane — DB Schema - Flow - Policy
+# DRAVEN Deploy Control Plane — DB Schema - Flow - Policy
 
 ## Obiettivo
 Realizzare un **control-plane in Symfony 7.4** che gestisca il deploy di circa 10 progetti, ognuno con 3 ambienti (**stage, demo, produzione**), orchestrando **pipeline esterne** (Bitbucket / GitHub / GitLab) che eseguono **Deployer** su runner dedicati.

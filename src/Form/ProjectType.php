@@ -18,18 +18,22 @@ class ProjectType extends AbstractType
             ->add('name', TextType::class, [
                 'label' => 'Nome',
                 'constraints' => [new Assert\NotBlank()],
+                'attr' => ['class' => 'input m-1 w-full'],
             ])
             ->add('slug', TextType::class, [
                 'label' => 'Slug',
                 'constraints' => [new Assert\NotBlank()],
+                'attr' => ['class' => 'input m-1 w-full'],
             ])
             ->add('description', TextType::class, [
                 'label' => 'Descrizione',
                 'required' => false,
+                'attr' => ['class' => 'input m-1 w-full'],
             ])
             ->add('isActive', CheckboxType::class, [
                 'label' => 'Attivo',
                 'required' => false,
+                'attr' => ['class' => 'm-1'],
             ]);
     }
 

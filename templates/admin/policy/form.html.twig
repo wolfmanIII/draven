@@ -1,12 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ policy.id ? 'Modifica policy' : 'Nuova policy' }}{% endblock %}
+{% block title %}{{ policy.id ? 'Policy' : 'Nuova policy' }}{% endblock %}
 
 {% block pageContent %}
 <div class="p-6 space-y-4 max-w-4xl mx-auto">
     <div class="flex items-center justify-between gap-4">
         <h1 class="text-2xl font-bold">
-            {{ policy.id ? 'Modifica policy' : 'Nuova policy' }}
+            {{ policy.id ? 'Policy' : 'Nuova policy' }}
         </h1>
         <a class="btn" href="{{ path('admin_policy_index') }}">Torna alla lista</a>
     </div>
@@ -14,19 +14,33 @@
     <div class="card bg-base-100 shadow-xl border border-base-300">
         <div class="card-body space-y-4">
             {{ form_start(form) }}
-                <div class="form-control">
-                    {{ form_row(form.name) }}
-                </div>
-                <div class="form-control">
-                    {{ form_row(form.description) }}
-                </div>
-                <div class="form-control">
-                    {{ form_row(form.rulesJson) }}
-                </div>
-                <div class="pt-2 space-x-2">
-                    <button class="btn btn-primary" type="submit">Salva</button>
-                    <a class="btn" href="{{ path('admin_policy_index') }}">Annulla</a>
-                </div>
+                <fieldset class="fieldset grid grid-cols-2 bg-base-200 border-base-300 gap-4 p-4 border rounded w-full">
+                    <legend class="fieldset-legend">Policy</legend>
+
+                    <div class="col-span-2">
+                        <label class="label">Nome</label>
+                        {{ form_widget(form.name) }}
+                        {{ form_errors(form.name) }}
+                    </div>
+
+                    <div class="col-span-2">
+                        <label class="label">Descrizione</label>
+                        {{ form_widget(form.description) }}
+                        {{ form_errors(form.description) }}
+                    </div>
+
+                    <div class="col-span-2">
+                        <label class="label">Regole (JSON)</label>
+                        {{ form_widget(form.rulesJson, { attr: { class: 'textarea textarea-bordered h-48 m-1 w-full' } }) }}
+                        {{ form_errors(form.rulesJson) }}
+                    </div>
+
+                    <div class="col-span-2 flex gap-2 pt-2">
+                        <button class="btn btn-primary" type="submit">Salva</button>
+                        <a class="btn" href="{{ path('admin_policy_index') }}">Annulla</a>
+                    </div>
+                </fieldset>
+                {{ form_rest(form) }}
             {{ form_end(form) }}
         </div>
     </div>

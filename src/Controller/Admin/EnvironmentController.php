@@ -40,8 +40,8 @@ class EnvironmentController extends BaseController
             return $this->redirectToRoute('admin_environment_index');
         }
 
-        return $this->renderTurbo('admin/environment/form.html.twig', $form, [
-            'form' => $form->createView(),
+        return $this->renderTurbo('admin/environment/form.html.twig', [
+            'form' => $form,
             'environment' => $environment,
         ]);
     }
@@ -59,7 +59,7 @@ class EnvironmentController extends BaseController
             return $this->redirectToRoute('admin_environment_index');
         }
 
-        return $this->renderTurbo('admin/environment/form.html.twig', $form, [
+        return $this->renderTurbo('admin/environment/form.html.twig', [
             'form' => $form,
             'environment' => $environment,
         ]);

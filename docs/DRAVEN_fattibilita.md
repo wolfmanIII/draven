@@ -1,4 +1,4 @@
-# Fattibilità — DRAVEN Control Plane (Deployer)
+# Fattibilità — DRAVEN Deploy Control Plane (Deployer)
 
 Control plane orientato al governo dei rilasci: ruoli, audit, approvazioni, log centralizzati, standardizzazione dei rilasci, rollback “a bottone”.
 

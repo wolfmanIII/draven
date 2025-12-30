@@ -1,8 +1,8 @@
-# Ipotesi di architettura — DRAVEN Control Plane
+# Ipotesi di architettura — DRAVEN Deploy Control Plane
 
 ## Architettura target
 
-### 1) Symfony 7.4 “DRAVEN Control Plane”
+### 1) Symfony 7.4 “DRAVEN Deploy Control Plane”
 Responsabilità:
 - UI + API
 - gestione **Projects / Environments / Policies**

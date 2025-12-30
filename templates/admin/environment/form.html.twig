@@ -1,12 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ environment.id ? 'Modifica environment' : 'Nuovo environment' }}{% endblock %}
+{% block title %}{{ environment.id ? 'Environment' : 'Nuovo environment' }}{% endblock %}
 
 {% block pageContent %}
 <div class="p-6 space-y-4 max-w-4xl mx-auto">
     <div class="flex items-center justify-between gap-4">
         <h1 class="text-2xl font-bold">
-            {{ environment.id ? 'Modifica environment' : 'Nuovo environment' }}
+            {{ environment.id ? 'Environment' : 'Nuovo environment' }}
         </h1>
         <a class="btn" href="{{ path('admin_environment_index') }}">Torna alla lista</a>
     </div>
@@ -14,25 +14,47 @@
     <div class="card bg-base-100 shadow-xl border border-base-300">
         <div class="card-body space-y-4">
             {{ form_start(form) }}
-                <div class="form-control">
-                    {{ form_row(form.project) }}
-                </div>
-                <div class="form-control">
-                    {{ form_row(form.name) }}
-                </div>
-                <div class="form-control">
-                    {{ form_row(form.policy) }}
-                </div>
-                <div class="form-control">
-                    {{ form_row(form.isEnabled) }}
-                </div>
-                <div class="form-control">
-                    {{ form_row(form.lockStrategy) }}
-                </div>
-                <div class="pt-2 space-x-2">
-                    <button class="btn btn-primary" type="submit">Salva</button>
-                    <a class="btn" href="{{ path('admin_environment_index') }}">Annulla</a>
-                </div>
+                <fieldset class="fieldset grid grid-cols-2 bg-base-200 border-base-300 gap-4 p-4 border rounded w-full">
+                    <legend class="fieldset-legend">Environment</legend>
+
+                    <div>
+                        <label class="label">Progetto</label>
+                        {{ form_widget(form.project) }}
+                        {{ form_errors(form.project) }}
+                    </div>
+
+                    <div>
+                        <label class="label">Nome</label>
+                        {{ form_widget(form.name) }}
+                        {{ form_errors(form.name) }}
+                    </div>
+
+                    <div>
+                        <label class="label">Policy</label>
+                        {{ form_widget(form.policy) }}
+                        {{ form_errors(form.policy) }}
+                    </div>
+
+                    <div>
+                        <label class="label">Lock strategy</label>
+                        {{ form_widget(form.lockStrategy) }}
+                        {{ form_errors(form.lockStrategy) }}
+                    </div>
+
+                    <div>
+                        <label class="label">Abilitato</label>
+                        <div class="flex items-center gap-2">
+                            {{ form_widget(form.isEnabled) }}
+                        </div>
+                        {{ form_errors(form.isEnabled) }}
+                    </div>
+
+                    <div class="col-span-2 flex gap-2 pt-2">
+                        <button class="btn btn-primary" type="submit">Salva</button>
+                        <a class="btn" href="{{ path('admin_environment_index') }}">Annulla</a>
+                    </div>
+                </fieldset>
+                {{ form_rest(form) }}
             {{ form_end(form) }}
         </div>
     </div>

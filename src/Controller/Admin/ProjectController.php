@@ -40,7 +40,7 @@ class ProjectController extends BaseController
             return $this->redirectToRoute('admin_project_index');
         }
 
-        return $this->renderTurbo('admin/project/form.html.twig', $form, [
+        return $this->renderTurbo('admin/project/form.html.twig', [
             'form' => $form,
             'project' => $project,
         ]);
@@ -59,7 +59,7 @@ class ProjectController extends BaseController
             return $this->redirectToRoute('admin_project_index');
         }
 
-        return $this->renderTurbo('admin/project/form.html.twig', $form, [
+        return $this->renderTurbo('admin/project/form.html.twig', [
             'form' => $form,
             'project' => $project,
         ]);

@@ -40,7 +40,7 @@ class RepoIntegrationController extends BaseController
             return $this->redirectToRoute('admin_integration_index');
         }
 
-        return $this->renderTurbo('admin/integration/form.html.twig', $form, [
+        return $this->renderTurbo('admin/integration/form.html.twig', [
             'form' => $form,
             'integration' => $integration,
         ]);
@@ -59,7 +59,7 @@ class RepoIntegrationController extends BaseController
             return $this->redirectToRoute('admin_integration_index');
         }
 
-        return $this->renderTurbo('admin/integration/form.html.twig', $form, [
+        return $this->renderTurbo('admin/integration/form.html.twig', [
             'form' => $form,
             'integration' => $integration,
         ]);

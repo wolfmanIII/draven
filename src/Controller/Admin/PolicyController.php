@@ -40,7 +40,7 @@ class PolicyController extends BaseController
             return $this->redirectToRoute('admin_policy_index');
         }
 
-        return $this->renderTurbo('admin/policy/form.html.twig', $form, [
+        return $this->renderTurbo('admin/policy/form.html.twig', [
             'form' => $form,
             'policy' => $policy,
         ]);
@@ -59,7 +59,7 @@ class PolicyController extends BaseController
             return $this->redirectToRoute('admin_policy_index');
         }
 
-        return $this->renderTurbo('admin/policy/form.html.twig', $form, [
+        return $this->renderTurbo('admin/policy/form.html.twig', [
             'form' => $form,
             'policy' => $policy,
         ]);
