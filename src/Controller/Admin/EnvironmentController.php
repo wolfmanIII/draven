@@ -41,7 +41,7 @@ class EnvironmentController extends BaseController
         }
 
         return $this->renderTurbo('admin/environment/form.html.twig', $form, [
-            'form' => $form,
+            'form' => $form->createView(),
             'environment' => $environment,
         ]);
     }
