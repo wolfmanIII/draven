@@ -117,13 +117,13 @@ Esecuzione lato provider (pipeline/workflow) triggerata da DRAVEN.
 - look “console” moderno: pulito, scuro o chiaro ma coerente
 - attenzione ai badge di stato e ai log
 
-### Palette (2 colori + neutrali)
-Palette a due colori principali con neutrali:
-- **Primary**: blu profondo (azioni principali, link, CTA)
-- **Accent**: ciano/teal (stato “running”, elementi sci‑fi discreti)
-- **Warning**: ambra (approvazione richiesta, attenzione)
-- **Danger**: rosso (failed, stop, rollback)
-- **Success**: verde (success)
+### Palette (tema DaisyUI “Abyss”)
+Valori HEX (tra parentesi l’OKLCH del tema Abyss):
+- **Primary**: #BDFF00 (oklch 92% 0.2653 125) – CTA e link, testo su primary #427600.
+- **Secondary**: #CEBEF4 (oklch 83.27% 0.0764 298.3) – badge/pill, testo #564775.
+- **Accent**: #505050 (oklch 43% 0 0) – elementi neutri o outline, testo #F8F8F8.
+- **Neutrali**: base-100 #001E29 (sfondo principale), base-200 #00111D (card), base-300 #000611 (outline/overlay), neutral #003843 (superfici elevate), testo base #FFD6A7.
+- **Feedback**: info #00BAFE (testo #042E49), success #01DF72 (testo #022D14), warning #FFBF00 (testo #854200), danger #F04E4F (testo #690000).
 
 ### Iconografia
 - Deploy: razzo / upload
